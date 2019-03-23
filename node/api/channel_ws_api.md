@@ -20,9 +20,8 @@ Roles:
  * Acknowledger
 
 ### Sender trigger an update
- * **action:** `update`
- * **tag** `new`
- * **payload:**
+ * **method:** `channels.update.new`
+ * **params:**
 
   | Name | Type | Description | Required |
   | ---- | ---- | ----------- | -------- |
@@ -43,9 +42,8 @@ Roles:
 ```
 
 ### Sender receives unsigned off-chain state
- * **action:** `sign`
- * **tag** `update`
- * **payload:**
+ * **method:** `channels.sign.update`
+ * **params:**
 
   | Name | Type | Description | Required |
   | ---- | ---- | ----------- | -------- |
@@ -61,8 +59,8 @@ Roles:
 ```
 
 ### Sender signed off-chain state responsse
- * **action:** `update`
- * **payload:**
+ * **method:** `channels.update`
+ * **params:**
 
   | Name | Type | Description | Required |
   | ---- | ---- | ----------- | -------- |
@@ -78,9 +76,8 @@ Roles:
 ```
 
 ### Acknowledger receives unsigned off-chain state
- * **action:** `sign`
- * **tag** `update_ack`
- * **payload:**
+ * **method:** `channels.sign.update_ack`
+ * **params:**
 
   | Name | Type | Description | Required |
   | ---- | ---- | ----------- | -------- |
@@ -96,8 +93,8 @@ Roles:
 ```
 
 ### Acknowledger signed off-chain state responsse
- * **action:** `update_ack`
- * **payload:**
+ * **method:** `channels.update_ack`
+ * **params:**
 
   | Name | Type | Description | Required |
   | ---- | ---- | ----------- | -------- |
@@ -113,7 +110,7 @@ Roles:
 ```
 
 ### Update conflict
- * **action:** `conflict`
+ * **method:** `channels.conflict`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -131,7 +128,7 @@ Roles:
 ```
 
 ### Update error
- * **action:** `error`
+ * **method:** `channels.error`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -160,7 +157,7 @@ Roles:
  * Acknowledger
 
 ### Depositor trigger a update
- * **action:** `deposit`
+ * **method:** `channels.deposit`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -177,8 +174,7 @@ Roles:
 ```
 
 ### Depositor receives unsigned deposit transaction
- * **action:** `sign`
- * **tag** `deposit_tx`
+ * **method:** `channels.sign.deposit_tx`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -195,7 +191,7 @@ Roles:
 ```
 
 ### Depositor signed deposit response
- * **action:** `deposit_tx`
+ * **method:** `channels.deposit_tx`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -212,8 +208,8 @@ Roles:
 ```
 
 ### Acknowledger receives unsigned deposit transaction
- * **action:** `sign`
- * **tag** `deposit_ack`
+ * **method:** `channels.sign.deposit_ack`
+ * **tag** ``
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -230,7 +226,7 @@ Roles:
 ```
 
 ### Acknowledger signed deposit responsse
- * **action:** `deposit_ack`
+ * **method:** `channels.deposit_ack`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -252,7 +248,7 @@ Roles:
  * Acknowledger
 
 ### Withdrawer trigger a update
- * **action:** `withdraw`
+ * **method:** `channels.withdraw`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -269,8 +265,7 @@ Roles:
 ```
 
 ### Withdrawer receives unsigned withdraw transaction
- * **action:** `sign`
- * **tag** `withdraw_tx`
+ * **method:** `channels.sign.withdraw_tx`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -287,7 +282,7 @@ Roles:
 ```
 
 ### Withdrawer signed withdraw response
- * **action:** `withdraw_tx`
+ * **method:** `channels.withdraw_tx`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -304,8 +299,7 @@ Roles:
 ```
 
 ### Acknowledger receives unsigned withdraw transaction
- * **action:** `sign`
- * **tag** `withdraw_ack`
+ * **method:** `channels.sign.withdraw_ack`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -322,7 +316,7 @@ Roles:
 ```
 
 ### Acknowledger signed withdraw responsse
- * **action:** `withdraw_ack`
+ * **method:** `channels.withdraw_ack`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -436,7 +430,7 @@ Roles:
  * Receiver
 
 ### Sender send message
- * **action:** `message`
+ * **method:** `channels.message`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -454,7 +448,7 @@ Roles:
 ```
 
 ### Receiver receives message
- * **action:** `message`
+ * **method:** `channels.message`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -488,7 +482,7 @@ Roles:
  * Acknowledger
 
 ### Closer initiate mutual close
- * **action:** `shutdown`
+ * **method:** `channels.shutdown`
 
 #### Example
 ```javascript
@@ -496,8 +490,7 @@ Roles:
 ```
 
 ### Closer receives mutual close
- * **action:** `sign`
- * **tag:** `shutdown_sign`
+ * **method:** `channels.sign.shutdown_sign`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -515,7 +508,7 @@ Roles:
 ```
 
 ### Closer returns signed mutual close
- * **action:** `shutdown_sign`
+ * **method:** `channels.shutdown_sign`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -532,8 +525,7 @@ Roles:
 ```
 
 ### Acknowledger receives mutual close
- * **action:** `sign`
- * **tag:** `shutdown_sign_ack`
+ * **method:** `channels.sign.shutdown_sign_ack`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -551,7 +543,7 @@ Roles:
 ```
 
 ### Acknowledger returns signed mutual close
- * **action:** `shutdown_sign_ack`
+ * **method:** `channels.shutdown_sign_ack`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -568,7 +560,7 @@ Roles:
 ```
 
 ## On-chain transactions
- * **action:** `on_chain_tx`
+ * **method:** `channels.on_chain_tx`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -590,7 +582,7 @@ Roles:
  * Acknowledger
 
 ### Leaver initiates leave
- * **action:** `leave`
+ * **method:** `channels.leave`
 
 #### Example
 ```javascript
@@ -610,7 +602,7 @@ Roles:
 ## Info messages
 
 ### Info
- * **action:** `info`
+ * **method:** `channels.info`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -625,8 +617,7 @@ Roles:
 ```
 
 ### Latest state
- * **action:** `get`
- * **tag:** `offchain_state`
+ * **method:** `channels.get.offchain_state`
 
 #### Response
  | Field name | Value |
@@ -656,8 +647,7 @@ Roles:
 ```
 
 ### Latest contract state
- * **action:** `get`
- * **tag:** `contract`
+ * **method:** `channels.get.contract`
  * **payload:**
 
   | Name | Type | Description | Required |
