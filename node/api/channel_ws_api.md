@@ -31,14 +31,15 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'update',
- 'tag': 'new',
- 'payload': {
-    'from': 'ak_3YGRJv1QMgNbeDzvqX7qJrZWJDaHGmrHYHifxSbhSEgn6anuNYCNPrzsB911xTbZ35bvJYWLyYjrQaQKfvja9gkpvYMfEZ',
-    'to': 'ak_3gVuduh7vR9G7Hq3TpFaA7q9oQkMZZF2VsUxDYZabNeKC1uaqtjpKSth7wPn9dxnUzsHoT2fa6GPUzepbDXMHyC2F3HupT',
-    'amount': 2
-    }
- }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.update.new",
+  "params": {
+    "amount": 2,
+    "from": "ak_2MGLPW2CHTDXJhqFJezqSwYSNwbZokSKkG7wSbGtVmeyjGfHtm",
+    "to": "ak_nQpnNuBPQwibGpSJmjAah6r3ktAB7pG9JHuaGWHgLKxaKqEvC"
+  }
+}
 ```
 
 ### Sender receives unsigned off-chain state
@@ -51,10 +52,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'update',
- 'payload' {
-    'tx': 'tx_21uV5so71tzLyBzTGBd5qd318n8Z33ninWoJzuBBKa3y3cLv8jL1gBsUpwoT1Wzs57fpxgxk7asMpuxcKpYxRnH1Qk679DjPUjLx3Lu6eNnPnfDwb4NpMq5tmm1Sq1j4MLfi6mFLadQ4CyuiENcytACQgkiU2CP8jWHKDCxAprKxP7EnXRKGbyaXkQRjvxmd5BK5XpnPHMoLb4zrrQfex5Wi8SkJjxWrhRyTr7u8jqyyebVPYmz3iRnnoEHfiECzBLdAYBz12U4VgUNrYug8C3ns5GcB1ytaUmggpDGY4K97dyYR8aMorFfqY6rPjwpRoL1BjbJgUBw54VVgMEijfeVCNcyw8wrVJnZeUAQKSesJcPhWShY717GVeQfGGHLzJhTY7iYBUUQCLfoVms86jJ3vMo1d9DpnahpCXfrZeR2PExg8Cn9DXc'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.update",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "tx": "tx_+JU5AaEGxg0THRn6EnayrKAiA7XHtC8jht9LlO75Omp4uAd28NUG+E24S/hJggI6AaEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2ahAWccVUZGSUV1srSU9lFoIXEGY9hIk83S0jYDelTDPu6EAaDVKneBkzhWnEbC2q9FakzUh62kF75skKy/zAal9PdC4a/QsrE="
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -68,10 +75,12 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'update',
- 'payload': {
-    'tx': 'tx_xCHADUvUikbjGRcBmioKtXFQKpGs7yZHvhkcjByxQDG5xnCpU6YVQs4qyBZL6h18xjTSy1wtUFe8ipKMHLp6VmU2KwLgd4mbUtqELz6w9wV6PGTex6ZS2y7TtqZsDuesGFTZqYET8syCor8kzGjemUkzvwHMJdKsQ5guDWj1C2EcuNR3MnK9heJLbKuf19peGDvijjS8zdCD1pxE4QcsVi9pAGUBCgFyKx8FkDzhv6LxjysuxdmuZqeTGq49s71QdVB74Y1DAQUq5JsH1kyhadFxVepS6FYmcBC4xK8h1sefipPAAVFY7YwNtj2W6U9CTCqSVAQSrpfGAo6322gSneD8aRKoGpQpy1NfxVePKqM5igmd1B6QDGcEYDigBzzNwrXpuYqjrdG5eB6C6ehwAxNskmiudbEuKrjwNL5JzExxrR21L5oQCDc3RMyPdeWJxs8eJfHCrWyzyAwsykV4hVGxddbsbrDWd3re42N5HARXpQG6Gq6aMGnSHJAKbXCWxys4Si6Wjpey7HyEgT1hYoxqtmwEGhW96Ksig'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.update",
+  "params": {
+    "tx": "tx_+N8LAfhCuECpOlAuBnwgezZlvmIZkD2Yw4xheb/BTnZaz+jAv2brWWoaUl95yOwZ6ataFXQmXvf3gVB7nGmWljxpHw0wwfIAuJf4lTkBoQbGDRMdGfoSdrKsoCIDtce0LyOG30uU7vk6ani4B3bw1Qb4TbhL+EmCAjoBoQGxtXe80yfLOeVebAJr1qdKGzXebAZQxK5R76t1nkFbZqEBZxxVRkZJRXWytJT2UWghcQZj2EiTzdLSNgN6VMM+7oQBoNUqd4GTOFacRsLar0VqTNSHraQXvmyQrL/MBqX090LhsL9soA=="
+  }
 }
 ```
 
@@ -85,10 +94,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'update_ack',
- 'payload' {
-    'tx': 'tx_21uV5so71tzLyBzTGBd5qd318n8Z33ninWoJzuBBKa3y3cLv8jL1gBsUpwoT1Wzs57fpxgxk7asMpuxcKpYxRnH1Qk679DjPUjLx3Lu6eNnPnfDwb4NpMq5tmm1Sq1j4MLfi6mFLadQ4CyuiENcytACQgkiU2CP8jWHKDCxAprKxP7EnXRKGbyaXkQRjvxmd5BK5XpnPHMoLb4zrrQfex5Wi8SkJjxWrhRyTr7u8jqyyebVPYmz3iRnnoEHfiECzBLdAYBz12U4VgUNrYug8C3ns5GcB1ytaUmggpDGY4K97dyYR8aMorFfqY6rPjwpRoL1BjbJgUBw54VVgMEijfeVCNcyw8wrVJnZeUAQKSesJcPhWShY717GVeQfGGHLzJhTY7iYBUUQCLfoVms86jJ3vMo1d9DpnahpCXfrZeR2PExg8Cn9DXc'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.update_ack",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "tx": "tx_21uV5so71tzLyBzTGBd5qd318n8Z33ninWoJzuBBKa3y3cLv8jL1gBsUpwoT1Wzs57fpxgxk7asMpuxcKpYxRnH1Qk679DjPUjLx3Lu6eNnPnfDwb4NpMq5tmm1Sq1j4MLfi6mFLadQ4CyuiENcytACQgkiU2CP8jWHKDCxAprKxP7EnXRKGbyaXkQRjvxmd5BK5XpnPHMoLb4zrrQfex5Wi8SkJjxWrhRyTr7u8jqyyebVPYmz3iRnnoEHfiECzBLdAYBz12U4VgUNrYug8C3ns5GcB1ytaUmggpDGY4K97dyYR8aMorFfqY6rPjwpRoL1BjbJgUBw54VVgMEijfeVCNcyw8wrVJnZeUAQKSesJcPhWShY717GVeQfGGHLzJhTY7iYBUUQCLfoVms86jJ3vMo1d9DpnahpCXfrZeR2PExg8Cn9DXc"
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -102,12 +117,15 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'update_ack',
- 'payload': {
-    'tx': 'tx_xCHADUvUikbjGRcBmj4YQkTJGCoGV6JQVdJW2FU1ZAYGhdayeCZerGqPWbRz4Eduq1KtjUbBJgdxSF3UKyChKMXne3dEDnChRdiUop4HYkHJ8GF3xQpbSspvST5qPTJqvcCstQCDXmJMLiYiWQ2hoPXL3a1qiiVmSwx2ztVuVqsEf1NsQCbMiNeJj8Uvrcp2FKN8TG2VoMTBTiMcCdLGXhX31EaLYTTDVyFTXGgFRUTdAsHgBjcQzm9hgQS75QjhKY7VtyUBCisUEQp8Dcr76rpdT1Qy9n8JYKboPkFZpY9DVx9We2hstbP3fjgZVLgDRAvLoC5YppVE7GZgUbRp6PMmbPUyc3qFYaxA82g7TzndipqnrKuuGzDjoPaM2w5evx1TvXAF5u1beac2kW7kJyKjLfLhjKQ8bnwBwcZ3WpdRfCVe55LtPwYEoZQJtdzojjVcuLmgJjbb2GDHioi8KXTasHre5oZKwkyYByMqzDafVTMT3kJqvdQG6HKAm8XGP6LGRsZFcpkn5jGtGbq7PRpTbAn1RbHWvRAEH'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.update_ack",
+  "params": {
+    "tx": "tx_xCHADUvUikbjGRcBmj4YQkTJGCoGV6JQVdJW2FU1ZAYGhdayeCZerGqPWbRz4Eduq1KtjUbBJgdxSF3UKyChKMXne3dEDnChRdiUop4HYkHJ8GF3xQpbSspvST5qPTJqvcCstQCDXmJMLiYiWQ2hoPXL3a1qiiVmSwx2ztVuVqsEf1NsQCbMiNeJj8Uvrcp2FKN8TG2VoMTBTiMcCdLGXhX31EaLYTTDVyFTXGgFRUTdAsHgBjcQzm9hgQS75QjhKY7VtyUBCisUEQp8Dcr76rpdT1Qy9n8JYKboPkFZpY9DVx9We2hstbP3fjgZVLgDRAvLoC5YppVE7GZgUbRp6PMmbPUyc3qFYaxA82g7TzndipqnrKuuGzDjoPaM2w5evx1TvXAF5u1beac2kW7kJyKjLfLhjKQ8bnwBwcZ3WpdRfCVe55LtPwYEoZQJtdzojjVcuLmgJjbb2GDHioi8KXTasHre5oZKwkyYByMqzDafVTMT3kJqvdQG6HKAm8XGP6LGRsZFcpkn5jGtGbq7PRpTbAn1RbHWvRAEH"
+  }
 }
 ```
+
 
 ### Update conflict
  * **method:** `channels.conflict`
@@ -115,15 +133,22 @@ Roles:
 
   | Name | Type | Description | Required |
   | ---- | ---- | ----------- | -------- |
-  | channel_id | string | channel id| Yes |
+  | channel_id | string | channel id | Yes |
   | round | integer | last correct state round | Yes |
 
 #### Example
 ```javascript
-{'action': 'conflict',
- 'payload': {'channel_id': 'ch_WmpDbaiCs5roqRCL5KEKbpsDNJSbcbiUvt2cs1qyj4sM9HA3b',
-             'round': 42
-             }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.conflict",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+      "round": 5
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -138,16 +163,30 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'error',
- 'payload': {'reason': 'insufficient_balance',
-             'request': {'action': 'update',
-                         'payload': {'amount': 10000,
-                                     'from': 'ak_4Kr76woCtc3ehZ45K1sCrmgKX6gnh7qGhjSU1GZYqfLTTjtCgn',
-                                     'to': 'ak_35Wxqf2cbzQF5hEV1j9AdXQFTMxqKCwM7iMKNGcqSv47MXAj68'
-                                     },
-                          'tag': 'new'
-                          }
-              }
+{
+  "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+  "error": {
+    "code": 3,
+    "data": [
+      {
+        "code": 1001,
+        "message": "Insufficient balance"
+      }
+    ],
+    "message": "Rejected",
+    "request": {
+      "jsonrpc": "2.0",
+      "method": "channels.update.new",
+      "params": {
+        "amount": 10000000000000000,
+        "from": "ak_nQpnNuBPQwibGpSJmjAah6r3ktAB7pG9JHuaGWHgLKxaKqEvC",
+        "to": "ak_2MGLPW2CHTDXJhqFJezqSwYSNwbZokSKkG7wSbGtVmeyjGfHtm"
+      }
+    }
+  },
+  "id": null,
+  "jsonrpc": "2.0",
+  "version": 1
 }
 ```
 
@@ -166,11 +205,13 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'deposit',
- 'payload': {
-    'amount': 2
-    }
- }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.deposit",
+  "params": {
+    "amount": 2
+  }
+}
 ```
 
 ### Depositor receives unsigned deposit transaction
@@ -183,10 +224,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'deposit_tx',
- 'payload' {
-    'tx': 'tx_2C9es4FjJF3MtD1M3Np7tUzgCk8AE3ARVJe94Sxmh63feCNt2CekXvjLhBPS2i8pQ8JKGQfgzMQnvfntEdYmMYo7D1UP59UUQ31Bss5G1gz8sPhzmrx1cXCawF9eB27gjYVhTnaLXwUEqdJfHqfATuwLqJtc1p'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.deposit_tx",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "tx": "tx_+HIzAaEGxg0THRn6EnayrKAiA7XHtC8jht9LlO75Omp4uAd28NWhAbG1d7zTJ8s55V5sAmvWp0obNd5sBlDErlHvq3WeQVtmAgCGEjCc5UAAoIGnTOuUnVM9QThcVqCCAFeJ51D7a6A4ldyhd3nuKg7lAgdGp4fe"
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -200,16 +247,17 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'deposit_tx',
- 'payload': {
-    'tx': 'tx_i2WsEQsiC5XsnyKgLeXGW6b9ys87yoQzNB65csymQbK9AsuWApenk9ViHpzxb2oJwUCGiqzA1Cc1D6pJAjkLcQ6w3m8Bhvt41HSqtpSpEd1MciHMcFg1xsZG9CsPu1NUBey9EupgXFJtZ4caNMXcV4evV7ocBjzdBcJo5CUMQgapQZ8ajgUrPgfqQTb3Gq8FFCuHHaHytA7fTNik4KAAvyHiEDutXf1VJxXG2oYkpoNTQGuriV3g4Hxrms3r7LD8ko91'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.deposit_tx",
+  "params": {
+    "tx": "tx_+LwLAfhCuEA8SP3yaWa1Esu9cpKAAdMio0dkAvSdorjnz4wrdSx5HKIupPoLNHygNM23uv9IMnOiVLDGFUZL26UDwnmYCKsFuHT4cjMBoQbGDRMdGfoSdrKsoCIDtce0LyOG30uU7vk6ani4B3bw1aEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2YCAIYSMJzlQACggadM65SdUz1BOFxWoIIAV4nnUPtroDiV3KF3ee4qDuUCB0cHknY="
+  }
 }
 ```
 
 ### Acknowledger receives unsigned deposit transaction
  * **method:** `channels.sign.deposit_ack`
- * **tag** ``
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -218,10 +266,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'deposit_ack',
- 'payload' {
-    'tx': 'tx_2WsEQsiC5Xso1aHppqY8EwniUa9demV2SAdrNckji4H5ZRDnakiMPAWRv4SSksecqXBCriNTTFg6c3dXK9TzmRV7DoqkKH68Vh7XbVGS7g9CQfaj46S8wgsFBdJtoBMnHV3xbbzSz36cMAAN3eosKaA74TMkgXWgrDCD619RnmskuyvArGbgy6fMFqSniG1s9a3WoTMLoFyw6ucpxgS523Dk3SQEbPAxznbL9KsBEjsCroe4HBVZZG5bX3LU8ZX9PUy'
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.deposit_ack",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "tx": "tx_+HIzAaEGxg0THRn6EnayrKAiA7XHtC8jht9LlO75Omp4uAd28NWhAbG1d7zTJ8s55V5sAmvWp0obNd5sBlDErlHvq3WeQVtmAgCGEjCc5UAAoIGnTOuUnVM9QThcVqCCAFeJ51D7a6A4ldyhd3nuKg7lAgdGp4fe"
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -235,10 +289,12 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'deposit_ack',
- 'payload': {
-    'tx': 'tx_2WsEQsiC5Xso1aHppqY8EwniUa9demV2SAdrNckji4H5ZRDnakiMPAWRv4SSksecqXBCriNTTFg6c3dXK9TzmRV7DoqkKH68Vh7XbVGS7g9CQfaj46S8wgsFBdJtoBMnHV3xbbzSz36cMAAN3eosKaA74TMkgXWgrDCD619RnmskuyvArGbgy6fMFqSniG1s9a3WoTMLoFyw6ucpxgS523Dk3SQEbPAxznbL9KsBEjsCroe4HBVZZG5bX3LU8ZX9PUy'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.deposit_ack",
+  "params": {
+    "tx": "tx_+LwLAfhCuEB2IeqEF8suaKRzZCtzm2Ux2luV/FxDyqXd2i6ePUowdJhT6V1oqUFTcbOo3eh+fmZh3HDVyLFkckVR/192AVsFuHT4cjMBoQbGDRMdGfoSdrKsoCIDtce0LyOG30uU7vk6ani4B3bw1aEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2YCAIYSMJzlQACggadM65SdUz1BOFxWoIIAV4nnUPtroDiV3KF3ee4qDuUCB4YWJuc="
+  }
 }
 ```
 
@@ -257,11 +313,13 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'withdraw',
- 'payload': {
-    'amount': 2
-    }
- }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.withdraw",
+  "params": {
+    "amount": 2
+  }
+}
 ```
 
 ### Withdrawer receives unsigned withdraw transaction
@@ -274,10 +332,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'withdraw_tx',
- 'payload' {
-    'tx': 'tx_2C9estKT2f86WwC7LCa18cDTTmMCrXM7N2AcrXKmgnTo9DNchXjNmewbgNX2YW4RYk8iHkVRnPpeYLRgh6xH96mHNxCMW4aUL2hgTe6iqdrKyM5eqMbCN9YgTdDvUzDyASJwoicxXb7UeDF5kFWvsEMxXBKGX2'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.withdraw_tx",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "tx": "tx_+HI0AaEGxg0THRn6EnayrKAiA7XHtC8jht9LlO75Omp4uAd28NWhAbG1d7zTJ8s55V5sAmvWp0obNd5sBlDErlHvq3WeQVtmAgCGEjCc5UAAoEUfp6Gv3gLYNHIy08ITGVY9Xv7I69D5Yu0FUzyRePtuBAiB1DYi"
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -291,10 +355,12 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'withdraw_tx',
- 'payload': {
-    'tx': 'tx_2WsEQsiC5Xsn85g88TmLYonFu2r8HT53jQPJ7f6Ai9uvnZGwnExRyJ51nHS2mU4g2FUTf2PHUsgs22X5Nwg1E1Zy8ofuoJAttqhXpySyYJhCwdWXYKF6bapSXCLwQoKJ9bWLYYZqudsiPfwv43ekzgJHtaWozzFjrEq835B7Xbd8LSd4znVh2FRWfAPW1Zvsm6nKjN2NfEPndwbps7zgqvbQYeKngwFk952CLtDEpGfXXiS5pUp5ExYTwsxGE4E6LKV'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.withdraw_tx",
+  "params": {
+    "tx": "tx_+LwLAfhCuEDWK5IT8u7+ThM6U1uF13WsMsBBuQWvA35wXJeCH+PidpjeivQD4vB3imhRQo8gPPSbNkbvolMajwVYP8BpxzYEuHT4cjQBoQbGDRMdGfoSdrKsoCIDtce0LyOG30uU7vk6ani4B3bw1aEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2YCAIYSMJzlQACgRR+noa/eAtg0cjLTwhMZVj1e/sjr0Pli7QVTPJF4+24ECFbANeQ="
+  }
 }
 ```
 
@@ -308,10 +374,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'withdraw_ack',
- 'payload' {
-    'tx': 'tx_2C9estKT2f86WwC7LCa18cDTTmMCrXM7N2AcrXKmgnTo9DNchXjNmewbgNX2YW4RYk8iHkVRnPpeYLRgh6xH96mHNxCMW4aUL2hgTe6iqdrKyM5eqMbCN9YgTdDvUzDyASJwoicxXb7UeDF5kFWvsEMxXBKGX2'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.withdraw_ack",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "tx": "tx_+HI0AaEGxg0THRn6EnayrKAiA7XHtC8jht9LlO75Omp4uAd28NWhAbG1d7zTJ8s55V5sAmvWp0obNd5sBlDErlHvq3WeQVtmAgCGEjCc5UAAoEUfp6Gv3gLYNHIy08ITGVY9Xv7I69D5Yu0FUzyRePtuBAiB1DYi"
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -325,10 +397,12 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'withdraw_ack',
- 'payload': {
-    'tx': 'tx_2WsEQsiC5XsmkQF6BS1aUhB55XkktxRJi2ZWbpCbGVHgQNPQzUeaEJk57RrhWBagGqNUyUA9YY6PrZhTiXcYs6dK1BxASu8EummTYvfpTjfnA8hU21pw6Ms9fWbJbhBbLNai4hLGPEJZ12r1UHqxLTnq6nJ69vw6szeisRzVJ3XYNpvGgSR5dVyW7Yd2VvtW5CGEMCXCHVYquD8gt6RMBDDr1Q6LeLUTomBpgFGQknjKv56tLtZ2FHkWWa9mU22jXMS'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.withdraw_ack",
+  "params": {
+    "tx": "tx_+LwLAfhCuEDZd+OFg28UyfwTEDaw2JQ23oL8/Y8G06oi2YgSmG6pmvH0DbP/mbyTo7ZI5Jzv4veS4MrUQSor0d6Q9fWX8GoKuHT4cjQBoQbGDRMdGfoSdrKsoCIDtce0LyOG30uU7vk6ani4B3bw1aEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2YCAIYSMJzlQACgRR+noa/eAtg0cjLTwhMZVj1e/sjr0Pli7QVTPJF4+24ECPo7AIM="
+  }
 }
 ```
 
@@ -336,8 +410,7 @@ Roles:
 
 ### Contract create
 
- * **action:** `update`
- * **tag:** `new_contract`
+ * **method:** `channels.update.new_contract`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -354,22 +427,21 @@ Roles:
 
 ```javascript
 {
-  "action": "update",
-  "payload": {
+  "jsonrpc": "2.0",
+  "method": "channels.update.new_contract",
+  "params": {
     "abi_version": 1,
     "call_data": "cb_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACC5yVbyizFJqfWYeqUF89obIgnMVzkjQAYrtsG9n5+Z6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnHQYrA==",
-    "code": "cb_+QTcRgGgMGbgp7wD6B3+n/ohfx9EzDl65rI64xWTcLSo2cJ7otP5A2P5AcuguclW8osxSan1mHqlBfPaGyIJzFc5I0AGK7bBvZ+fmeqEaW5pdLhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////////////////////uQFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQD//////////////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////////////////////////////////////5AZKg7nfmdqoCk7VwhfBIleas1RJ1aXkZ3la8nAyrmjkRcHSLY2FuX3Jlc29sdmW5ASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAP//////////////////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC5AVBiAABkYgAAhJGAgIBRf7nJVvKLMUmp9Zh6pQXz2hsiCcxXOSNABiu2wb2fn5nqFGIAAURXUIBRf+535naqApO1cIXwSJXmrNUSdWl5Gd5WvJwMq5o5EXB0FGIAAK9XUGABGVEAW2AAGVlgIAGQgVJgIJADYAOBUpBZYABRWVJgAFJgAPNbYACAUmAA81tZWWAgAZCBUmAgkANgABlZYCABkIFSYCCQA2ADgVKBUpBWW2AgAVGAUZBgIAFRWVCBgZJQklBQYABgAH9hktnKsTLmK0AbjhU+HchD/pn4We3jfElNxXAcNfa1ZGABWZCBUllgYAGQgVJgIJADhIFSYCCQA4WBUmAgkANgyIFSYABgAFrxgFFgABRiAAEsV4BRYAEUYgABNldQYAEZUQBbUGAAW5FQUJBWW2AgAVFgAZBQYgABMFZbUFCCkVBQYgAAjFZiG02X",
+    "code": "cb_+QPvRgGg/ukoFMi2RBUIDNHZ3pMMzHSrPs/uKkwO/vEf7cRnitr5Avv5ASqgaPJnYzj/UIg5q6R3Se/6i+h+8oTyB/s9mZhwHNU4h8WEbWFpbrjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKD//////////////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+QHLoLnJVvKLMUmp9Zh6pQXz2hsiCcxXOSNABiu2wb2fn5nqhGluaXS4YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////////////////////////////////////7kBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA//////////////////////////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////////////////////uMxiAABkYgAAhJGAgIBRf7nJVvKLMUmp9Zh6pQXz2hsiCcxXOSNABiu2wb2fn5nqFGIAAMBXUIBRf2jyZ2M4/1CIOaukd0nv+ovofvKE8gf7PZmYcBzVOIfFFGIAAK9XUGABGVEAW2AAGVlgIAGQgVJgIJADYAOBUpBZYABRWVJgAFJgAPNbYACAUmAA81tZWWAgAZCBUmAgkANgABlZYCABkIFSYCCQA2ADgVKBUpBWW2AgAVFRWVCAkVBQgJBQkFZbUFCCkVBQYgAAjFbiASYE",
     "deposit": 10,
     "vm_version": 3
-  },
-  "tag": "new_contract"
+  }
 }
 ```
 
 ### Contract create from on-chain contract
 
- * **action:** `update`
- * **tag:** `new_contract_from_onchain`
+ * **method:** `channels.update.new_contract_from_onchain`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -384,20 +456,19 @@ Roles:
 
 ```javascript
 {
-  "action": "update",
-  "payload": {
+  "jsonrpc": "2.0"
+  "method": "channels.update.new_contract_from_onchain",
+  "params": {
     "call_data": "cb_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACC5yVbyizFJqfWYeqUF89obIgnMVzkjQAYrtsG9n5+Z6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnHQYrA==",
     "contract": "ct_26WLX27MDif5WcqBXX8ndnQ2TQQvLgZ4TfL299BmteioZsJYER",
     "deposit": 10,
   },
-  "tag": "new_contract_from_onchain"
 }
 ```
 
 ### Contract call
 
- * **action:** `update`
- * **tag:** `call_contract`
+ * **method:** `channels.update.call_contract`
  * **payload:**
 
   | Name | Type | Description | Required |
@@ -413,14 +484,14 @@ Roles:
 
 ```javascript
 {
-  "action": "update",
-  "payload": {
+  "jsonrpc": "2.0",
+  "method": "channels.update.call_contract",
+  "params": {
     "abi_version": 1,
     "amount": 0,
-    "call_data": "cb_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDud+Z2qgKTtXCF8EiV5qzVEnVpeRneVrycDKuaORFwdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATQ2VUVHRZWW5Wb25ZWUQudGVzdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABm9yYWNsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD16MlQ==",
-    "contract": "ct_2BwwHijMMhHYSYfxHgwqKpWwcFfFGroTvoVMHoFXpEh9a6Mnht"
-  },
-  "tag": "call_contract"
+    "call_data": "cb_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBo8mdjOP9QiDmrpHdJ7/qL6H7yhPIH+z2ZmHAc1TiHxQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACo7dbVl",
+    "contract": "ct_2Yy7TpPUs7SCm9jkCz7vz3nkb18zs78vcuVQGbgjRaWQNTWpm5"
+  }
 }
 ```
 
@@ -440,10 +511,13 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'message',
- 'payload': {'info': 'hejsan',
-             'to': 'ak_35Wxqf2cbzQF5hEV1j9AdXQFTMxqKCwM7iMKNGcqSv47MXAj68'
-             }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.message",
+  "params": {
+    "info": "hejsan",
+    "to": "ak_nQpnNuBPQwibGpSJmjAah6r3ktAB7pG9JHuaGWHgLKxaKqEvC"
+  }
 }
 ```
 
@@ -466,13 +540,21 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'message',
- 'payload': {'message': {'channel_id': 'ch_6SgSc7a14dGbwMNCsjjQZCYVreVLKkFwBzJEZ58ZSZnV9FiQ1',
-                         'from': 'ak_4Kr76woCtc3ehZ45K1sCrmgKX6gnh7qGhjSU1GZYqfLTTjtCgn',
-                         'to': 'ak_35Wxqf2cbzQF5hEV1j9AdXQFTMxqKCwM7iMKNGcqSv47MXAj68',
-                         'info': 'hejsan'
-                         }
-            }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.message",
+  "params": {
+    "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+    "data": {
+      "message": {
+        "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+        "from": "ak_2MGLPW2CHTDXJhqFJezqSwYSNwbZokSKkG7wSbGtVmeyjGfHtm",
+        "info": "hejsan",
+        "to": "ak_nQpnNuBPQwibGpSJmjAah6r3ktAB7pG9JHuaGWHgLKxaKqEvC"
+      }
+    }
+  },
+  "version": 1
 }
 ```
 
@@ -486,7 +568,11 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'shutdown'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.shutdown",
+  "params": {}
+}
 ```
 
 ### Closer receives mutual close
@@ -499,11 +585,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'shutdown_sign',
- 'payload': {
-    'tx': 'tx_SUBGDUaJgWhDYs73EPSiX42Xd3PSmHAhRmwd1th9ibGipCVVbsdS96roQZEH4MF'
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.shutdown_sign",
+  "params": {
+    "channel_id": "ch_UpJnk4rp1qMqze3PxDKNAPUtKR18MNkCoAx3wX8gkQy8JfsjM",
+    "data": {
+      "tx": "tx_+F01AaEGPyim63JiB1RogAr8VnTjD2/LeL6fGLhySWhqgr7e7XihAbG1d7zTJ8s55V5sAmvWp0obNd5sBlDErlHvq3WeQVtmhjaR1q+//4YbSOtX4AEAhhIwnOVAAANe4ar8"
     }
+  },
+  "version": 1
 }
 ```
 
@@ -517,10 +608,12 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'shutdown_sign',
- 'payload': {
-    'tx': 'tx_8oWtHcfnWDSQV6Wdehp1MdXYhcbV29a7tWe3LWDqU5RwKvMhzPQLiSJKaYhtw4NLaBN1m3pmEtsVjoygkohXi9i8e3vpYgenphdKJmYLrFqjouxmyC5yKbsQUY8m9i4EzcMNuHmrLwrXrrPhKC1qY25Pxb6u74VEVuk'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.shutdown_sign",
+  "params": {
+    "tx": "tx_+KcLAfhCuEBjFLnPgoPp15I2oYzgPjrQJQyqvg1O1EimmGosw9jrNw2jTfaZXzSleSqPJ7F5T/dqLUSmqN5Py7ZlWQFKn4IFuF/4XTUBoQY/KKbrcmIHVGiACvxWdOMPb8t4vp8YuHJJaGqCvt7teKEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2aGNpHWr7//hhtI61fgAQCGEjCc5UAAA9iOZm4="
+  }
 }
 ```
 
@@ -534,11 +627,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'sign',
- 'tag': 'shutdown_sign_ack',
- 'payload': {
-    'tx': 'tx_SUBGDUaJgWhDYs73EPSiX42Xd3PSmHAhRmwd1th9ibGipCVVbsdS96roQZEH4MF'
+{
+  "jsonrpc": "2.0",
+  "method": "channels.sign.shutdown_sign_ack",
+  "params": {
+    "channel_id": "ch_UpJnk4rp1qMqze3PxDKNAPUtKR18MNkCoAx3wX8gkQy8JfsjM",
+    "data": {
+      "tx": "tx_+F01AaEGPyim63JiB1RogAr8VnTjD2/LeL6fGLhySWhqgr7e7XihAbG1d7zTJ8s55V5sAmvWp0obNd5sBlDErlHvq3WeQVtmhjaR1q+//4YbSOtX4AEAhhIwnOVAAANe4ar8"
     }
+  },
+  "version": 1
 }
 ```
 
@@ -552,10 +650,12 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'shutdown_sign_ack',
- 'payload': {
-    'tx': 'tx_8oWtHcfnWDSYu4SfLLLHqYqM5JXiCZd6De7fLQZesMHrArZeWzP7893EVpBpUR56tKUeJXJ3YUTuqB8a4efiHaw6ai3GKwoeu3ZyzfGPUfb5EMG6viv2dM8mhtKqaG7fkEAWuswbmFN4bDjXANbAK2sMU36yfBc9p1h'
-    }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.shutdown_sign_ack",
+  "params": {
+    "tx": "tx_+KcLAfhCuECzm2E8CsyzKvbO6zx8QHMnqX2lorQfH/t+FE7SQsf7tAL32BbqyFMox0su5RN9nriuXW1zdSCBkNvtKGDyVukCuF/4XTUBoQY/KKbrcmIHVGiACvxWdOMPb8t4vp8YuHJJaGqCvt7teKEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2aGNpHWr7//hhtI61fgAQCGEjCc5UAAA3BBwE8="
+  }
 }
 ```
 
@@ -569,10 +669,16 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'shutdown_sign_ack',
- 'payload': {
-    'tx': 'tx_CWSA5wyxuP9AbAbcxQi8QbZsfUdhQdDouMSgsBTAQCNdN8PDKsLf6qnEhw6JacKRWKmBuwBaJYZTUSDUKih9vygmzkmbn2XC7MkGcz6zbwThk9jdyH8HQhzWq9uZ7ExYNjZyXGpPX6vQLsSRH8d4RxqvD94uG9YhcNqDWeSntM5CtBrjCwEXm9r3wEkZ6NKnoUShU5soJZTV8TAMFAArJMsS2V3EAjXSSVf3Xt5aJeVLgVbSYczcM22gvZt2LEPTCUJEYW2XsDvi6rAtps58d7B1P5uDuXG8s8hEWi11XsjaTyhGhnt9jfcBYVzQVdApG1JpMaQjeyRiEqwNoAVjTranxeM1Cn'
+{
+  "jsonrpc": "2.0",
+  "method": "channels.on_chain_tx",
+  "params": {
+    "channel_id": "ch_UpJnk4rp1qMqze3PxDKNAPUtKR18MNkCoAx3wX8gkQy8JfsjM",
+    "data": {
+      "tx": "tx_+OkLAfiEuEBjFLnPgoPp15I2oYzgPjrQJQyqvg1O1EimmGosw9jrNw2jTfaZXzSleSqPJ7F5T/dqLUSmqN5Py7ZlWQFKn4IFuECzm2E8CsyzKvbO6zx8QHMnqX2lorQfH/t+FE7SQsf7tAL32BbqyFMox0su5RN9nriuXW1zdSCBkNvtKGDyVukCuF/4XTUBoQY/KKbrcmIHVGiACvxWdOMPb8t4vp8YuHJJaGqCvt7teKEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2aGNpHWr7//hhtI61fgAQCGEjCc5UAAA3KhgIw="
     }
+  },
+  "version": 1
 }
 ```
 
@@ -586,16 +692,25 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'leave'}
+{
+  "jsonrpc": "2.0",
+  "method": "channels.leave",
+  "params": {}
+}
 ```
 
 #### Leaver and Acknowledger inform their clients
 ```javascript
-{'action': 'leave',
- 'channel_id': 'ch_FhYNM5KorNAcRwexe1CE3jH5DZd7FBD2g9XhBDHGEouDqVRCR',
- 'payload': {
-    'state': 'tx_6jPYBUFTkcmQ7A3JYkUsYMChMHNqe3TMEhDZaSat7P1sbP4XXQP9QmaFfaAftUDjws3GhdKaBGyJRMBhHKyk2irBZsymgUVuxfQXR63ojEjg7C583D6cNKLSZtybZr9Cw6mmCkSDRVu41WbF1jKEkAkXbXznANm3AyJ1BLqNVB7qiAyFSVeq5qVcvHL4Z1y2DAhcLLw6YGSqFyuyg8pKVQRhL2LuePa9mdtoYZyY5VhvgShLz2oY8R3taBL8RrnnTvcwECvQu51yPKyM2pryoHaQbED5Zn7hdegZy6KN9wfpLXedtNB9ssmMvz5jHcK12vmtfeUMzRrySqtmBDGfiqwFZrYZ5A7xz1uqi'
+{
+  "jsonrpc": "2.0",
+  "method": "channels.leave",
+  "params": {
+    "channel_id": "ch_2eZhEJ676pykdcHHcTZuSF346bq1ru3qnAiT2KowopwrPKwy7t",
+    "data": {
+      "state": "tx_+QENCwH4hLhABM97OxIYPtz2Oc4Kf20AMKA3GgnsQMtopM2g8ap17B1mZ9uFHB9LlM+rQPddSnhYIUj40JQq+tEJiVs7JEUdC7hA9Um2nQj7YlMx3ZC5UQgfF9Dg/FlPTQ5SkzSdAzEL0/dw9QuXKQXpPH6D0T2CZCxiqGvJqJykAqWofFWY8cnaCLiD+IEyAaEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2aGP6olImAAoQFnHFVGRklFdbK0lPZRaCFxBmPYSJPN0tI2A3pUwz7uhIYkYTnKgAACCgCGEjCc5UAAwKCjPk7CXWjSHTO8V2Y9WTad6D/5sB8yCR8WumWh0WxWvwUG+R1a"
     }
+  },
+  "version": 1
 }
 ```
 
@@ -611,9 +726,17 @@ Roles:
 
 #### Example
 ```javascript
-{'action': 'info',
- 'payload': {'event': 'own_deposit_locked'}
- }
+{
+  "jsonrpc": "2.0",
+  "method": "channels.info",
+  "params": {
+    "channel_id": null,
+    "data": {
+      "event": "own_funding_locked"
+    }
+  },
+  "version": 1
+}
 ```
 
 ### Latest state
@@ -631,19 +754,28 @@ Roles:
 
 ##### Request
 ```javascript
-{'action': 'get', 'payload': {}, 'tag': 'offchain_state'}
+{
+  "id": -576460752303423485,
+  "jsonrpc": "2.0",
+  "method": "channels.get.offchain_state",
+  "params": {}
+}
 ```
+
 ##### Response
 ```javascript
-{'action': 'get',
- 'channel_id': 'ch_2eYSahMjyrytqyd28iyNGK8ETBTW868yki8pYUxDBd6Akp29k4',
- 'payload': {
-   'calls': 'cs_yYICbgGEwz8BwHtqgWY=',
-    'half_signed_tx': '',
-    'signed_tx': 'tx_+QEhCwH4hLhABA9QLTLb8+EWeN+ZCL3GmcwlOczQobsgHqDnYWuX+oUmyBKcBLEgDngf2phxqzQZEI5UDsI4/a6raPh9ddP1BLhA5sF1rvkHi3hD6Ms7TpMpkGs/dEOVGFv7LeWnxQ+h8N23Hr2eU5g3C7UMnSiLM97kpVDExjobRWi6eYGHgF1wCriX+JU5AaEG2PCjn3Eu3YTF4cstNGAp7ZGDxjcJrqUCFEU8sIMWbggC+E24S/hJggI6AaEB7qS1cNCbw3GpiqMXadWS4UkmP7hy9Gwff3kErkNExqqhAViP6Wm0p2j/DY8a9978psqBZF9cAupp5+Qfq/jmCizCAaA8q/nvdMUP6xOxo0AYP43zXUs+3k+b8J85LY3cFMzlYBFnSEA=',
-    'trees': 'ss_+KQ+AIrJggJtAYTDPwHAismCAm4BhMM/AcCKyYICbwGEwz8BwIrJggJwAYTDPwHAismCAnEBhMM/AcC4afhnggJyAbhh+F8/AfhbrexAAaDupLVw0JvDcamKoxdp1ZLhSSY/uHL0bB9/eQSuQ0TGqojHCgEAgwERbqzrQAGgWI/pabSnaP8Njxr33vymyoFkX1wC6mnn5B+r+OYKLMKHxgoBAIKcQquqkGQ='},
-  'tag': 'offchain_state',
-  'version': 1}
+{
+  "channel_id": "ch_2TPA12qYnQUE6359Vmg55SD5wMvKUQxZA9wWChWSsRkFvvYAUd",
+  "id": -576460752303423485,
+  "jsonrpc": "2.0",
+  "result": {
+    "calls": "cs_yYICbgGEwz8BwHtqgWY=",
+    "half_signed_tx": "",
+    "signed_tx": "tx_+QEhCwH4hLhAFXwNaSWq75TZB6MqjXb237eg1HXAwtRJjHZSYxRYBAvvvuLHEZiGLiCJ1rrQpPdUf1iez8yMwBo3ufn+zQCXA7hA15Jy3irdXz/9xhNWcsbNAZGKh6zYtA1Q4jG8Hd7SWESzPCKGI2mcD1CRRo1VU/6wtJn4g2pYjdo1fu464x2sCLiX+JU5AaEGv5mAzmFWTbhQbZIllPBKUMvVeYksW98zTz0CISoGPl0C+E24S/hJggI6AaEBsbV3vNMnyznlXmwCa9anShs13mwGUMSuUe+rdZ5BW2ahAWccVUZGSUV1srSU9lFoIXEGY9hIk83S0jYDelTDPu6EAaDVKneBkzhWnEbC2q9FakzUh62kF75skKy/zAal9PdC4a8Rvaw=",
+    "trees": "ss_+Ks+AIrJggJtAYTDPwHAismCAm4BhMM/AcCKyYICbwGEwz8BwIrJggJwAYTDPwHAismCAnEBhMM/AcC4cPhuggJyAbho+GY/AfhisO9AAaCxtXe80yfLOeVebAJr1qdKGzXebAZQxK5R76t1nkFbZovKCgEAhj+qJSJf/rDvQAGgZxxVRkZJRXWytJT2UWghcQZj2EiTzdLSNgN6VMM+7oSLygoBAIYkYTnKgAJXk16b"
+  },
+  "version": 1
+}
 ```
 
 ### Latest contract state
@@ -671,32 +803,44 @@ Roles:
 
 ##### Request
 ```javascript
-{'action': 'get', 'payload': {'pubkey': 'ct_GZk4K59CD3vsPJdrD2AqjQqcmJZBhbmutBDRLjVKo6vQv5XSF'}, 'tag': 'contract'}
+{
+  "id": -576460752303423453,
+  "jsonrpc": "2.0",
+  "method": "channels.get.contract",
+  "params": {
+    "pubkey": "ct_uBX2jBr5bPEzD1uGFmV4i7JrGLtpEeLqPU29HvkZCv5iHcY4M"
+  }
+}
 ```
 
 ##### Response
 ```javascript
 {
-  'action': 'get',
-  'channel_id': 'ch_2mSyZiicECmC2uDHQvW59gQYgSaKyNErtEdn2HUrkwDo9UgiWh',
-  'payload': {
-    'contract': {
-      'abi_version': 1,
-      'active': true,
-      'deposit': 10,
-      'id': 'ct_GZk4K59CD3vsPJdrD2AqjQqcmJZBhbmutBDRLjVKo6vQv5XSF',
-      'owner_id': 'ak_HAMKne7TMiXpjYvejPA1TPph4gvxGPW2id39ik2xRx9mDggLn',
-      'referrer_ids': [],
-      'vm_version': 3
+  "channel_id": "ch_2WDx2uyKSNAMSEb11eczNNtSMyRLNfhFAUwwP73xDk4cngy9u9",
+  "id": -576460752303423378,
+  "jsonrpc": "2.0",
+  "result": {
+    "contract": {
+      "abi_version": 1,
+      "active": true,
+      "deposit": 10,
+      "id": "ct_MkcRwxFzpHUUgcxM9fJ6YSPwoqriqZkrD7UwV2oQd1eCaniw5",
+      "owner_id": "ak_nQpnNuBPQwibGpSJmjAah6r3ktAB7pG9JHuaGWHgLKxaKqEvC",
+      "referrer_ids": [],
+      "vm_version": 3
     },
-    'contract_state': {
-      'ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArMtts': 'cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPE19M0=',
-      'ck_ABQG4Fg=': 'cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACALwdrjmVFjHOdmmbn42HQvOTUqy2+eXrhvc8AvA2XSaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJEZpbGwgbWUgaW4gd2l0aCBzb21ldGhpbmcgcmVhc29uYWJsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCOMlT',
-      'ck_AZwSz9w=': 'cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWD//////////////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyVHQH',
-     'ck_AhzDreo=': 'cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArMtts'
+    "contract_state": {
+      "ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFSSB3aW4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACG5Hw1": "cv_ZxxVRkZJRXWytJT2UWghcQZj2EiTzdLSNgN6VMM+7oQn68jh",
+      "ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJbm8sIEkgd2luAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8NuDd": "cv_ZxxVRkZJRXWytJT2UWghcQZj2EiTzdLSNgN6VMM+7oQn68jh",
+      "ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMSSBjbGFpbSB0aGlzAAAAAAAAAAAAAAAAAAAAAAAAAACEEDl2": "cv_ZxxVRkZJRXWytJT2UWghcQZj2EiTzdLSNgN6VMM+7oQn68jh",
+      "ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXb3RoZXIgcmVhc29uYWJsZSB0aGluZ3kAAAAAAAAAAACz7RfH": "cv_ZxxVRkZJRXWytJT2UWghcQZj2EiTzdLSNgN6VMM+7oQn68jh",
+      "ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArMtts": "cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPE19M0=",
+      "ck_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARfjTDm": "cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJhxCx4=",
+      "ck_ABQG4Fg=": "cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDIq10LA12xQcUbe3+xpb7TFHBPbFVOWLUaz7/TKOGKmgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJEZpbGwgbWUgaW4gd2l0aCBzb21ldGhpbmcgcmVhc29uYWJsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADHrnyz",
+      "ck_AZwSz9w=": "cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWD//////////////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyVHQH",
+      "ck_AhzDreo=": "cv_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARfjTDm"
     }
   },
-  'tag': 'contract',
-  'version': 1
+  "version": 1
 }
 ```
